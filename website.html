@@ -1,0 +1,1941 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Spinster Sisters — Sonoma, CA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --cream: #f5f0e8;
+        --parchment: #ede6d6;
+        --warm-white: #faf7f2;
+        --ink: #1e1a14;
+        --bark: #3d2f1f;
+        --rust: #b04a2a;
+        --sage: #6b7c5e;
+        --sage-light: #a8b89a;
+        --gold: #c9973a;
+        --gold-light: #e8c97a;
+        --border: rgba(61, 47, 31, 0.15);
+        --serif: "Cormorant Garamond", Georgia, serif;
+        --bask: "Libre Baskerville", Georgia, serif;
+        --sans: "Jost", sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--cream);
+        color: var(--ink);
+        font-family: var(--bask);
+        font-size: 16px;
+        line-height: 1.7;
+        overflow-x: hidden;
+      }
+
+      /* ── NAV ── */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 200;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.1rem 3rem;
+        background: rgba(245, 240, 232, 0.92);
+        backdrop-filter: blur(12px);
+        border-bottom: 0.5px solid var(--border);
+      }
+
+      .nav-logo {
+        font-family: var(--serif);
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        color: var(--bark);
+        text-decoration: none;
+        font-style: italic;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2.5rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        font-family: var(--sans);
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--bark);
+        text-decoration: none;
+        opacity: 0.75;
+        transition: opacity 0.2s;
+      }
+
+      .nav-links a:hover {
+        opacity: 1;
+      }
+
+      .nav-reserve {
+        font-family: var(--sans);
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--warm-white);
+        background: var(--rust);
+        padding: 9px 22px;
+        border-radius: 2px;
+        text-decoration: none;
+        transition: background 0.2s;
+      }
+
+      .nav-reserve:hover {
+        background: var(--bark);
+      }
+
+      /* ── HERO ── */
+      #hero {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-top: 70px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 5rem 4rem 5rem 6rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-eyebrow {
+        font-family: var(--sans);
+        font-size: 10px;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--sage);
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .hero-eyebrow::before {
+        content: "";
+        display: inline-block;
+        width: 32px;
+        height: 1px;
+        background: var(--sage);
+      }
+
+      .hero-title {
+        font-family: var(--serif);
+        font-size: clamp(58px, 7vw, 92px);
+        line-height: 1;
+        font-weight: 300;
+        color: var(--bark);
+        letter-spacing: -0.01em;
+        margin-bottom: 1rem;
+      }
+
+      .hero-title em {
+        font-style: italic;
+        color: var(--rust);
+        display: block;
+      }
+
+      .hero-sub {
+        font-family: var(--bask);
+        font-size: 16px;
+        font-style: italic;
+        color: var(--bark);
+        opacity: 0.65;
+        max-width: 380px;
+        line-height: 1.8;
+        margin-bottom: 2.5rem;
+      }
+
+      .hero-ctas {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .btn-primary {
+        font-family: var(--sans);
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--warm-white);
+        background: var(--rust);
+        padding: 14px 32px;
+        border-radius: 2px;
+        text-decoration: none;
+        transition:
+          background 0.2s,
+          transform 0.15s;
+        display: inline-block;
+      }
+
+      .btn-primary:hover {
+        background: var(--bark);
+        transform: translateY(-1px);
+      }
+
+      .btn-secondary {
+        font-family: var(--sans);
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--bark);
+        border: 1px solid var(--border);
+        padding: 14px 32px;
+        border-radius: 2px;
+        text-decoration: none;
+        transition:
+          border-color 0.2s,
+          background 0.2s;
+        display: inline-block;
+      }
+
+      .btn-secondary:hover {
+        border-color: var(--bark);
+        background: rgba(61, 47, 31, 0.04);
+      }
+
+      .hero-right {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-img-grid {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        grid-template-rows: 60% 40%;
+      }
+
+      .hero-img-main {
+        background: #c4a882;
+        background-image:
+          radial-gradient(
+            ellipse at 30% 60%,
+            rgba(176, 74, 42, 0.15) 0%,
+            transparent 60%
+          ),
+          radial-gradient(
+            ellipse at 80% 20%,
+            rgba(107, 124, 94, 0.2) 0%,
+            transparent 50%
+          );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Illustrated food icon */
+      .hero-illustration {
+        width: 260px;
+        height: 260px;
+        opacity: 0.22;
+      }
+
+      .hero-img-bottom {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-img-b1 {
+        background: #a89070;
+        background-image: radial-gradient(
+          ellipse at 50% 50%,
+          rgba(201, 151, 58, 0.3) 0%,
+          transparent 70%
+        );
+      }
+
+      .hero-img-b2 {
+        background: #8a7560;
+        background-image: radial-gradient(
+          ellipse at 50% 50%,
+          rgba(107, 124, 94, 0.4) 0%,
+          transparent 70%
+        );
+      }
+
+      .hero-img-label {
+        position: absolute;
+        bottom: 16px;
+        left: 18px;
+        font-family: var(--sans);
+        font-size: 9px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      /* ── MARQUEE ── */
+      .marquee-bar {
+        background: var(--bark);
+        color: var(--gold-light);
+        padding: 13px 0;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      .marquee-inner {
+        display: inline-flex;
+        animation: marquee 28s linear infinite;
+        gap: 0;
+      }
+
+      .marquee-inner span {
+        font-family: var(--serif);
+        font-size: 15px;
+        font-style: italic;
+        letter-spacing: 0.03em;
+        padding: 0 2.5rem;
+      }
+
+      .marquee-dot {
+        font-style: normal;
+        color: var(--rust);
+        font-size: 18px;
+        vertical-align: middle;
+      }
+
+      @keyframes marquee {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* ── SECTION BASE ── */
+      section {
+        padding: 6rem 6rem;
+      }
+
+      .section-label {
+        font-family: var(--sans);
+        font-size: 10px;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--sage);
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .section-label::after {
+        content: "";
+        flex: 1;
+        max-width: 48px;
+        height: 1px;
+        background: var(--sage-light);
+      }
+
+      .section-title {
+        font-family: var(--serif);
+        font-size: clamp(36px, 4vw, 56px);
+        font-weight: 300;
+        line-height: 1.1;
+        color: var(--bark);
+        letter-spacing: -0.01em;
+      }
+
+      .section-title em {
+        font-style: italic;
+        color: var(--rust);
+      }
+
+      /* ── ABOUT ── */
+      #about {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6rem;
+        align-items: center;
+        background: var(--warm-white);
+      }
+
+      .about-visual {
+        position: relative;
+        height: 520px;
+      }
+
+      .about-card-main {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 78%;
+        height: 82%;
+        background: #b5956e;
+        background-image:
+          radial-gradient(
+            ellipse at 40% 40%,
+            rgba(176, 74, 42, 0.2) 0%,
+            transparent 60%
+          ),
+          radial-gradient(
+            ellipse at 70% 70%,
+            rgba(107, 124, 94, 0.25) 0%,
+            transparent 50%
+          );
+        border-radius: 3px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .about-card-accent {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 58%;
+        height: 46%;
+        background: var(--sage);
+        background-image: radial-gradient(
+          ellipse at 30% 60%,
+          rgba(201, 151, 58, 0.3) 0%,
+          transparent 60%
+        );
+        border-radius: 3px;
+        border: 4px solid var(--warm-white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .about-badge {
+        position: absolute;
+        top: 38%;
+        right: -18px;
+        width: 100px;
+        height: 100px;
+        background: var(--rust);
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border: 3px solid var(--warm-white);
+        z-index: 10;
+      }
+
+      .about-badge-year {
+        font-family: var(--serif);
+        font-size: 28px;
+        font-weight: 600;
+        color: var(--warm-white);
+        line-height: 1;
+      }
+
+      .about-badge-text {
+        font-family: var(--sans);
+        font-size: 8px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .about-text {
+        max-width: 500px;
+      }
+
+      .about-text p {
+        color: var(--bark);
+        opacity: 0.8;
+        font-size: 15px;
+        line-height: 1.9;
+        margin-bottom: 1.25rem;
+      }
+
+      .about-stats {
+        display: flex;
+        gap: 2.5rem;
+        margin-top: 2.5rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border);
+      }
+
+      .stat-num {
+        font-family: var(--serif);
+        font-size: 42px;
+        font-weight: 300;
+        color: var(--rust);
+        line-height: 1;
+      }
+
+      .stat-label {
+        font-family: var(--sans);
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--bark);
+        opacity: 0.55;
+        margin-top: 4px;
+      }
+
+      /* ── MENU HIGHLIGHTS ── */
+      #menu {
+        background: var(--parchment);
+        position: relative;
+      }
+
+      #menu::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          var(--rust),
+          var(--gold),
+          var(--sage)
+        );
+      }
+
+      .menu-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 3.5rem;
+      }
+
+      .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-bottom: 2.5rem;
+      }
+
+      .menu-card {
+        background: var(--warm-white);
+        border-radius: 3px;
+        overflow: hidden;
+        border: 0.5px solid var(--border);
+        transition:
+          transform 0.25s,
+          box-shadow 0.25s;
+        cursor: default;
+      }
+
+      .menu-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(61, 47, 31, 0.1);
+      }
+
+      .menu-card-img {
+        height: 200px;
+        background: #c0a07a;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .menu-card-img.v2 {
+        background: #8fa082;
+      }
+      .menu-card-img.v3 {
+        background: #b08860;
+      }
+      .menu-card-img.v4 {
+        background: #9aaa7e;
+      }
+      .menu-card-img.v5 {
+        background: #c49060;
+      }
+      .menu-card-img.v6 {
+        background: #7a9080;
+      }
+
+      .food-svg {
+        width: 100px;
+        height: 100px;
+        opacity: 0.28;
+      }
+
+      .menu-card-tag {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        font-family: var(--sans);
+        font-size: 9px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        background: var(--rust);
+        color: white;
+        padding: 4px 10px;
+        border-radius: 2px;
+      }
+
+      .menu-card-body {
+        padding: 1.25rem 1.4rem;
+      }
+
+      .menu-card-name {
+        font-family: var(--serif);
+        font-size: 20px;
+        font-weight: 400;
+        color: var(--bark);
+        line-height: 1.2;
+        margin-bottom: 5px;
+      }
+
+      .menu-card-desc {
+        font-family: var(--sans);
+        font-size: 12px;
+        color: var(--bark);
+        opacity: 0.6;
+        line-height: 1.6;
+        margin-bottom: 10px;
+      }
+
+      .menu-card-price {
+        font-family: var(--serif);
+        font-size: 22px;
+        color: var(--rust);
+        font-weight: 300;
+      }
+
+      .menu-footer {
+        text-align: center;
+        margin-top: 1rem;
+      }
+
+      /* ── EXPERIENCE ── */
+      #experience {
+        background: var(--bark);
+        color: var(--cream);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      .exp-left {
+        padding: 6rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .exp-left .section-label {
+        color: var(--sage-light);
+      }
+      .exp-left .section-label::after {
+        background: var(--sage);
+      }
+
+      .exp-left .section-title {
+        color: var(--cream);
+      }
+
+      .exp-left p {
+        color: rgba(245, 240, 232, 0.65);
+        font-size: 15px;
+        line-height: 1.9;
+        margin: 1.5rem 0 2.5rem;
+        max-width: 440px;
+      }
+
+      .exp-features {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.25rem;
+        margin-top: 2rem;
+      }
+
+      .exp-feat {
+        background: rgba(255, 255, 255, 0.05);
+        border: 0.5px solid rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        padding: 1.25rem;
+      }
+
+      .exp-feat-icon {
+        font-size: 22px;
+        margin-bottom: 8px;
+      }
+
+      .exp-feat-title {
+        font-family: var(--serif);
+        font-size: 17px;
+        font-style: italic;
+        color: var(--gold-light);
+        margin-bottom: 4px;
+      }
+
+      .exp-feat-text {
+        font-family: var(--sans);
+        font-size: 12px;
+        color: rgba(245, 240, 232, 0.5);
+        line-height: 1.6;
+      }
+
+      .exp-right {
+        position: relative;
+        background: #2a2218;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 500px;
+      }
+
+      .exp-quote-box {
+        padding: 4rem;
+        text-align: center;
+      }
+
+      .exp-quote {
+        font-family: var(--serif);
+        font-size: clamp(24px, 3vw, 38px);
+        font-style: italic;
+        font-weight: 300;
+        color: var(--cream);
+        line-height: 1.4;
+        margin-bottom: 2rem;
+      }
+
+      .exp-quote-mark {
+        font-family: var(--serif);
+        font-size: 80px;
+        line-height: 0;
+        color: var(--rust);
+        opacity: 0.4;
+        vertical-align: -30px;
+      }
+
+      .exp-attribution {
+        font-family: var(--sans);
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--gold);
+      }
+
+      .stars {
+        color: var(--gold);
+        font-size: 14px;
+        letter-spacing: 3px;
+        margin-bottom: 1.5rem;
+      }
+
+      /* ── HOURS & RESERVE ── */
+      #visit {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        background: var(--warm-white);
+        padding: 0;
+      }
+
+      .visit-hours {
+        padding: 5rem 5rem;
+        border-right: 1px solid var(--border);
+      }
+
+      .visit-reserve {
+        padding: 5rem 5rem;
+        background: var(--rust);
+        color: var(--warm-white);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .hours-table {
+        width: 100%;
+        margin-top: 2rem;
+        border-collapse: collapse;
+      }
+
+      .hours-table tr {
+        border-bottom: 0.5px solid var(--border);
+      }
+
+      .hours-table tr:last-child {
+        border-bottom: none;
+      }
+
+      .hours-table td {
+        padding: 14px 0;
+        font-family: var(--sans);
+        font-size: 13px;
+        color: var(--bark);
+      }
+
+      .hours-table td:first-child {
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        width: 55%;
+      }
+
+      .hours-table td:last-child {
+        text-align: right;
+        opacity: 0.65;
+      }
+
+      .hours-note {
+        font-family: var(--bask);
+        font-size: 13px;
+        font-style: italic;
+        color: var(--sage);
+        margin-top: 1.5rem;
+      }
+
+      .visit-reserve .section-label {
+        color: rgba(255, 255, 255, 0.6);
+      }
+      .visit-reserve .section-label::after {
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      .visit-reserve .section-title {
+        color: var(--warm-white);
+        font-size: clamp(30px, 3vw, 44px);
+        margin: 0.5rem 0 1rem;
+      }
+
+      .visit-reserve p {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 14px;
+        line-height: 1.8;
+        margin-bottom: 2rem;
+        max-width: 380px;
+      }
+
+      .reserve-form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        max-width: 380px;
+      }
+
+      .reserve-form input,
+      .reserve-form select {
+        width: 100%;
+        padding: 13px 16px;
+        border-radius: 2px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--warm-white);
+        font-family: var(--sans);
+        font-size: 13px;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+
+      .reserve-form input::placeholder {
+        color: rgba(255, 255, 255, 0.45);
+      }
+      .reserve-form input:focus,
+      .reserve-form select:focus {
+        border-color: rgba(255, 255, 255, 0.6);
+      }
+
+      .reserve-form select {
+        color: rgba(255, 255, 255, 0.7);
+      }
+      .reserve-form select option {
+        color: var(--ink);
+        background: white;
+      }
+
+      .reserve-form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .btn-reserve-submit {
+        width: 100%;
+        padding: 15px;
+        font-family: var(--sans);
+        font-size: 12px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--rust);
+        background: var(--warm-white);
+        border: none;
+        border-radius: 2px;
+        cursor: pointer;
+        font-weight: 500;
+        transition:
+          background 0.2s,
+          color 0.2s,
+          transform 0.15s;
+        margin-top: 4px;
+      }
+
+      .btn-reserve-submit:hover {
+        background: var(--bark);
+        color: var(--warm-white);
+        transform: translateY(-1px);
+      }
+
+      /* ── GALLERY ── */
+      #gallery {
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: 260px 180px;
+      }
+
+      .gal-cell {
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+      }
+
+      .gal-cell::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(30, 26, 20, 0);
+        transition: background 0.3s;
+      }
+
+      .gal-cell:hover::after {
+        background: rgba(30, 26, 20, 0.25);
+      }
+
+      .gal-cell.span2 {
+        grid-column: span 2;
+      }
+      .gal-cell.span3 {
+        grid-column: span 3;
+      }
+      .gal-cell.tall {
+        grid-row: span 2;
+      }
+
+      .gal-bg {
+        width: 100%;
+        height: 100%;
+        transition: transform 0.5s;
+      }
+      .gal-cell:hover .gal-bg {
+        transform: scale(1.05);
+      }
+
+      /* Gallery color blocks */
+      .gb1 {
+        background: #c4a882;
+        background-image: radial-gradient(
+          ellipse at 40% 50%,
+          rgba(176, 74, 42, 0.25) 0%,
+          transparent 60%
+        );
+      }
+      .gb2 {
+        background: #8fa082;
+        background-image: radial-gradient(
+          ellipse at 60% 40%,
+          rgba(107, 124, 94, 0.4) 0%,
+          transparent 60%
+        );
+      }
+      .gb3 {
+        background: #b5956e;
+        background-image: radial-gradient(
+          ellipse at 30% 60%,
+          rgba(201, 151, 58, 0.3) 0%,
+          transparent 60%
+        );
+      }
+      .gb4 {
+        background: #7a9080;
+        background-image: radial-gradient(
+          ellipse at 50% 50%,
+          rgba(107, 124, 94, 0.5) 0%,
+          transparent 60%
+        );
+      }
+      .gb5 {
+        background: #c49060;
+        background-image: radial-gradient(
+          ellipse at 50% 40%,
+          rgba(176, 74, 42, 0.2) 0%,
+          transparent 60%
+        );
+      }
+      .gb6 {
+        background: #a89070;
+        background-image: radial-gradient(
+          ellipse at 40% 60%,
+          rgba(201, 151, 58, 0.35) 0%,
+          transparent 60%
+        );
+      }
+      .gb7 {
+        background: #9aaa7e;
+        background-image: radial-gradient(
+          ellipse at 60% 50%,
+          rgba(107, 124, 94, 0.4) 0%,
+          transparent 60%
+        );
+      }
+
+      /* ── PRESS ── */
+      #press {
+        background: var(--parchment);
+        text-align: center;
+        padding: 5rem 6rem;
+      }
+
+      .press-label {
+        font-family: var(--sans);
+        font-size: 10px;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--muted, var(--sage));
+        margin-bottom: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+      }
+
+      .press-label::before,
+      .press-label::after {
+        content: "";
+        width: 48px;
+        height: 1px;
+        background: var(--sage-light);
+      }
+
+      .press-logos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
+        flex-wrap: wrap;
+        margin-bottom: 3.5rem;
+      }
+
+      .press-name {
+        font-family: var(--serif);
+        font-size: 22px;
+        font-style: italic;
+        color: var(--bark);
+        opacity: 0.3;
+        letter-spacing: 0.02em;
+        transition: opacity 0.2s;
+        cursor: default;
+      }
+
+      .press-name:hover {
+        opacity: 0.6;
+      }
+
+      .press-quotes {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        text-align: left;
+      }
+
+      .press-quote-card {
+        background: var(--warm-white);
+        border: 0.5px solid var(--border);
+        border-radius: 3px;
+        padding: 1.75rem;
+      }
+
+      .press-quote-text {
+        font-family: var(--serif);
+        font-size: 18px;
+        font-style: italic;
+        color: var(--bark);
+        line-height: 1.5;
+        margin-bottom: 1rem;
+      }
+
+      .press-source {
+        font-family: var(--sans);
+        font-size: 10px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--rust);
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background: var(--ink);
+        color: rgba(245, 240, 232, 0.5);
+        padding: 3.5rem 6rem;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 3rem;
+      }
+
+      .footer-brand {
+        font-family: var(--serif);
+        font-size: 28px;
+        font-style: italic;
+        font-weight: 300;
+        color: var(--gold-light);
+        margin-bottom: 1rem;
+      }
+
+      .footer-tagline {
+        font-family: var(--bask);
+        font-size: 13px;
+        font-style: italic;
+        color: rgba(245, 240, 232, 0.4);
+        line-height: 1.7;
+        max-width: 240px;
+      }
+
+      .footer-col-title {
+        font-family: var(--sans);
+        font-size: 9px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 1rem;
+      }
+
+      .footer-col a,
+      .footer-col p {
+        display: block;
+        font-family: var(--sans);
+        font-size: 12px;
+        color: rgba(245, 240, 232, 0.45);
+        text-decoration: none;
+        margin-bottom: 8px;
+        transition: color 0.2s;
+        line-height: 1.6;
+      }
+
+      .footer-col a:hover {
+        color: rgba(245, 240, 232, 0.85);
+      }
+
+      .footer-bottom {
+        background: var(--ink);
+        padding: 1.25rem 6rem;
+        border-top: 0.5px solid rgba(255, 255, 255, 0.07);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .footer-copy {
+        font-family: var(--sans);
+        font-size: 11px;
+        color: rgba(245, 240, 232, 0.25);
+        letter-spacing: 0.05em;
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 1.25rem;
+      }
+
+      .footer-social a {
+        font-family: var(--sans);
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        color: rgba(245, 240, 232, 0.3);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .footer-social a:hover {
+        color: rgba(245, 240, 232, 0.8);
+      }
+
+      /* ── SCROLL ANIMATIONS ── */
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: none;
+      }
+
+      .reveal-delay-1 {
+        transition-delay: 0.1s;
+      }
+      .reveal-delay-2 {
+        transition-delay: 0.2s;
+      }
+      .reveal-delay-3 {
+        transition-delay: 0.3s;
+      }
+      .reveal-delay-4 {
+        transition-delay: 0.4s;
+      }
+
+      /* ── MOBILE ── */
+      @media (max-width: 900px) {
+        nav {
+          padding: 1rem 1.5rem;
+        }
+        .nav-links {
+          display: none;
+        }
+
+        #hero {
+          grid-template-columns: 1fr;
+        }
+        .hero-left {
+          padding: 5rem 2rem 3rem;
+        }
+        .hero-right {
+          min-height: 300px;
+          position: relative;
+        }
+
+        section {
+          padding: 4rem 2rem;
+        }
+
+        #about {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+        .about-visual {
+          height: 280px;
+        }
+        .about-badge {
+          right: 10px;
+        }
+
+        .menu-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        #experience {
+          grid-template-columns: 1fr;
+        }
+        .exp-left {
+          padding: 4rem 2rem;
+        }
+        .exp-quote-box {
+          padding: 3rem 2rem;
+        }
+
+        #visit {
+          grid-template-columns: 1fr;
+        }
+        .visit-hours,
+        .visit-reserve {
+          padding: 3.5rem 2rem;
+        }
+
+        #gallery {
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: auto;
+        }
+        .gal-cell.span2,
+        .gal-cell.span3 {
+          grid-column: span 1;
+        }
+
+        .press-quotes {
+          grid-template-columns: 1fr;
+        }
+        .press-logos {
+          gap: 2rem;
+        }
+
+        footer {
+          grid-template-columns: 1fr 1fr;
+          padding: 3rem 2rem;
+        }
+        .footer-bottom {
+          padding: 1.25rem 2rem;
+          flex-direction: column;
+          gap: 8px;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <a href="#" class="nav-logo">The Spinster Sisters</a>
+      <ul class="nav-links">
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+      <a href="#visit" class="nav-reserve">Reserve a Table</a>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-left">
+        <div class="hero-eyebrow">Sonoma, California · Est. 2011</div>
+        <h1 class="hero-title">
+          Where the table
+          <em>tells a story.</em>
+        </h1>
+        <p class="hero-sub">
+          Farm-to-table cuisine rooted in the California tradition — honest
+          ingredients, soulful cooking, and a room that feels like coming home.
+        </p>
+        <div class="hero-ctas">
+          <a href="#visit" class="btn-primary">Reserve a Table</a>
+          <a href="#menu" class="btn-secondary">View the Menu</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-img-grid">
+          <div class="hero-img-main">
+            <svg
+              class="hero-illustration"
+              viewBox="0 0 200 200"
+              fill="white"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <ellipse cx="100" cy="140" rx="75" ry="18" />
+              <rect x="60" y="70" width="80" height="70" rx="8" />
+              <ellipse cx="100" cy="70" rx="40" ry="12" />
+              <rect x="88" y="40" width="24" height="30" rx="4" />
+              <circle cx="100" cy="36" r="10" />
+            </svg>
+            <span class="hero-img-label">Seasonal tasting menu</span>
+          </div>
+          <div class="hero-img-bottom">
+            <div class="hero-img-b1" style="position: relative">
+              <span class="hero-img-label">Local produce</span>
+            </div>
+            <div class="hero-img-b2" style="position: relative">
+              <span class="hero-img-label">Natural wine list</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee-bar" aria-hidden="true">
+      <div class="marquee-inner">
+        <span>Farm-to-table <span class="marquee-dot">·</span></span>
+        <span>Sonoma County <span class="marquee-dot">·</span></span>
+        <span>Seasonal menus <span class="marquee-dot">·</span></span>
+        <span>Natural wines <span class="marquee-dot">·</span></span>
+        <span>Open kitchen <span class="marquee-dot">·</span></span>
+        <span>Private dining <span class="marquee-dot">·</span></span>
+        <span>Sunday brunch <span class="marquee-dot">·</span></span>
+        <span>Farm-to-table <span class="marquee-dot">·</span></span>
+        <span>Sonoma County <span class="marquee-dot">·</span></span>
+        <span>Seasonal menus <span class="marquee-dot">·</span></span>
+        <span>Natural wines <span class="marquee-dot">·</span></span>
+        <span>Open kitchen <span class="marquee-dot">·</span></span>
+        <span>Private dining <span class="marquee-dot">·</span></span>
+        <span>Sunday brunch <span class="marquee-dot">·</span></span>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="about-visual reveal">
+        <div class="about-card-main">
+          <svg
+            width="140"
+            height="140"
+            viewBox="0 0 140 140"
+            fill="white"
+            opacity="0.18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M70 20 C40 20, 20 40, 20 70 C20 100, 40 120, 70 120 C100 120, 120 100, 120 70 C120 40, 100 20, 70 20Z"
+            />
+            <path
+              d="M45 70 C45 55, 55 45, 70 45 C85 45, 95 55, 95 70"
+              stroke="white"
+              stroke-width="3"
+              fill="none"
+            />
+            <circle cx="70" cy="70" r="12" />
+          </svg>
+        </div>
+        <div class="about-card-accent">
+          <svg
+            width="80"
+            height="80"
+            viewBox="0 0 80 80"
+            fill="white"
+            opacity="0.2"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M40 10 L50 30 L72 33 L56 49 L60 71 L40 60 L20 71 L24 49 L8 33 L30 30Z"
+            />
+          </svg>
+        </div>
+        <div class="about-badge">
+          <div class="about-badge-year">14+</div>
+          <div class="about-badge-text">Years of<br />excellence</div>
+        </div>
+      </div>
+
+      <div class="about-text">
+        <div class="section-label reveal">Our Story</div>
+        <h2 class="section-title reveal reveal-delay-1">
+          Two sisters. <em>One table.</em>
+        </h2>
+        <div class="reveal reveal-delay-2">
+          <p>
+            Founded in 2011 by sisters Liza and Maggie Hinman, The Spinster
+            Sisters began as a simple idea: bring the farmers' market to the
+            dinner table. What started as a cozy corner spot has grown into one
+            of Sonoma's most celebrated dining destinations.
+          </p>
+          <p>
+            Every dish we serve traces its lineage directly to the soil of
+            Sonoma County — heirloom vegetables, pasture-raised meats, and
+            wildflowers from farms we know by name. Our menu changes with the
+            seasons, because that is how it should be.
+          </p>
+        </div>
+        <div class="about-stats reveal reveal-delay-3">
+          <div>
+            <div class="stat-num">40+</div>
+            <div class="stat-label">Local farm partners</div>
+          </div>
+          <div>
+            <div class="stat-num">8</div>
+            <div class="stat-label">James Beard nominations</div>
+          </div>
+          <div>
+            <div class="stat-num">4.9</div>
+            <div class="stat-label">Average rating</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU HIGHLIGHTS -->
+    <section id="menu">
+      <div class="menu-header">
+        <div>
+          <div class="section-label reveal">Seasonal offerings</div>
+          <h2 class="section-title reveal reveal-delay-1">
+            A taste of <em>right now.</em>
+          </h2>
+        </div>
+        <a href="#" class="btn-secondary reveal">Full Menu ↗</a>
+      </div>
+
+      <div class="menu-grid">
+        <div class="menu-card reveal">
+          <div class="menu-card-img">
+            <svg
+              class="food-svg"
+              viewBox="0 0 100 100"
+              fill="white"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <ellipse cx="50" cy="70" rx="38" ry="10" />
+              <rect x="20" y="40" width="60" height="32" rx="6" />
+              <ellipse cx="50" cy="40" rx="30" ry="8" />
+            </svg>
+            <span class="menu-card-tag">Starter</span>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-name">Burrata & Stone Fruit</div>
+            <div class="menu-card-desc">
+              Whipped burrata, grilled peach, pistachio crumble, aged balsamic,
+              wildflower honey
+            </div>
+            <div class="menu-card-price">$18</div>
+          </div>
+        </div>
+
+        <div class="menu-card reveal reveal-delay-1">
+          <div class="menu-card-img v2">
+            <svg
+              class="food-svg"
+              viewBox="0 0 100 100"
+              fill="white"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M20 60 Q50 30 80 60 L80 75 Q50 85 20 75Z" />
+              <ellipse cx="50" cy="60" rx="30" ry="8" />
+              <circle cx="35" cy="52" r="5" />
+              <circle cx="50" cy="48" r="5" />
+              <circle cx="65" cy="52" r="5" />
+            </svg>
+            <span class="menu-card-tag">Salad</span>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-name">Heirloom Beet & Fennel</div>
+            <div class="menu-card-desc">
+              Roasted Chioggia beets, shaved fennel, whipped goat cheese,
+              candied walnut, citrus vinaigrette
+            </div>
+            <div class="menu-card-price">$16</div>
+          </div>
+        </div>
+
+        <div class="menu-card reveal reveal-delay-2">
+          <div class="menu-card-img v3">
+            <svg
+              class="food-svg"
+              viewBox="0 0 100 100"
+              fill="white"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <ellipse cx="50" cy="72" rx="36" ry="10" />
+              <path d="M20 55 Q50 35 80 55 L80 72 Q50 80 20 72Z" />
+              <path
+                d="M35 50 Q50 30 65 50"
+                stroke="white"
+                stroke-width="3"
+                fill="none"
+              />
+            </svg>
+            <span class="menu-card-tag">Chef's pick</span>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-name">Seared Duck Breast</div>
+            <div class="menu-card-desc">
+              Cherry-lavender glaze, white bean cassoulet, crispy duck fat
+              fingerlings, pickled shallot
+            </div>
+            <div class="menu-card-price">$38</div>
+          </div>
+        </div>
+
+        <div class="menu-card reveal">
+          <div class="menu-card-img v4">
+            <svg
+              class="food-svg"
+              viewBox="0 0 100 100"
+              fill="white"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect x="25" y="45" width="50" height="30" rx="5" />
+              <ellipse cx="50" cy="45" rx="25" ry="7" />
+              <rect x="35" y="30" width="30" height="17" rx="3" />
+            </svg>
+            <span class="menu-card-tag">Entrée</span>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-name">Garden Harvest Risotto</div>
+            <div class="menu-card-desc">
+              Sonoma Arborio, spring pea, black truffle, Parmesan, lemon oil,
+              pea tendrils
+            </div>
+            <div class="menu-card-price">$32</div>
+          </div>
+        </div>
+
+        <div class="menu-card reveal reveal-delay-1">
+          <div class="menu-card-img v5">
+            <svg
+              class="food-svg"
+              viewBox="0 0 100 100"
+              fill="white"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <ellipse cx="50" cy="68" rx="35" ry="10" />
+              <path d="M18 55 Q50 28 82 55 L80 68 Q50 76 20 68Z" />
+              <path
+                d="M30 50 C30 35, 50 28, 70 50"
+                stroke="white"
+                stroke-width="2.5"
+                fill="none"
+              />
+            </svg>
+            <span class="menu-card-tag">Entrée</span>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-name">Grass-Fed Flat Iron</div>
+            <div class="menu-card-desc">
+              8oz Sonoma County beef, chimichurri, roasted bone marrow, smoked
+              potato gratin
+            </div>
+            <div class="menu-card-price">$46</div>
+          </div>
+        </div>
+
+        <div class="menu-card reveal reveal-delay-2">
+          <div class="menu-card-img v6">
+            <svg
+              class="food-svg"
+              viewBox="0 0 100 100"
+              fill="white"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="50" cy="55" r="30" />
+              <path
+                d="M35 45 Q50 30 65 45"
+                stroke="white"
+                stroke-width="2.5"
+                fill="none"
+              />
+              <circle cx="50" cy="55" r="10" />
+            </svg>
+            <span class="menu-card-tag">Dessert</span>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-name">Olive Oil Panna Cotta</div>
+            <div class="menu-card-desc">
+              Sonoma olive oil, Meyer lemon curd, rosemary shortbread, blood
+              orange gelée
+            </div>
+            <div class="menu-card-price">$14</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-footer reveal">
+        <a href="#" class="btn-primary">Explore the Full Menu</a>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="exp-left">
+        <div class="section-label">The atmosphere</div>
+        <h2 class="section-title">More than a <em>meal.</em></h2>
+        <p>
+          Step into a warmly lit room where exposed brick meets candlelight,
+          where the open kitchen hums with quiet confidence, and where every
+          detail — from the hand-thrown ceramics to the curated vinyl — has been
+          chosen with intention.
+        </p>
+
+        <div class="exp-features">
+          <div class="exp-feat">
+            <div class="exp-feat-icon">🕯️</div>
+            <div class="exp-feat-title">Open Kitchen</div>
+            <div class="exp-feat-text">
+              Watch the craft up close from the chef's counter
+            </div>
+          </div>
+          <div class="exp-feat">
+            <div class="exp-feat-icon">🍷</div>
+            <div class="exp-feat-title">Natural Wine</div>
+            <div class="exp-feat-text">
+              70-label list, biodynamic and low-intervention
+            </div>
+          </div>
+          <div class="exp-feat">
+            <div class="exp-feat-icon">🌿</div>
+            <div class="exp-feat-title">Private Dining</div>
+            <div class="exp-feat-text">
+              Bespoke menus for gatherings of 8–40 guests
+            </div>
+          </div>
+          <div class="exp-feat">
+            <div class="exp-feat-icon">☀️</div>
+            <div class="exp-feat-title">Sunday Brunch</div>
+            <div class="exp-feat-text">
+              Leisurely, local, and always worth the wait
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-right">
+        <div class="exp-quote-box">
+          <div class="stars">★★★★★</div>
+          <div class="exp-quote">
+            <span class="exp-quote-mark">"</span>
+            The kind of restaurant you fly across the country to eat at again.
+            Transcendent in the most honest, unpretentious way.
+          </div>
+          <div class="exp-attribution">— Bon Appétit Magazine</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <div id="gallery" aria-label="Restaurant gallery">
+      <div class="gal-cell span2 tall"><div class="gal-bg gb1"></div></div>
+      <div class="gal-cell"><div class="gal-bg gb2"></div></div>
+      <div class="gal-cell"><div class="gal-bg gb3"></div></div>
+      <div class="gal-cell"><div class="gal-bg gb4"></div></div>
+      <div class="gal-cell"><div class="gal-bg gb5"></div></div>
+      <div class="gal-cell"><div class="gal-bg gb6"></div></div>
+      <div class="gal-cell"><div class="gal-bg gb7"></div></div>
+    </div>
+
+    <!-- PRESS -->
+    <section id="press">
+      <div class="press-label">As featured in</div>
+      <div class="press-logos">
+        <span class="press-name">Bon Appétit</span>
+        <span class="press-name">Food & Wine</span>
+        <span class="press-name">The New York Times</span>
+        <span class="press-name">Eater</span>
+        <span class="press-name">Sunset</span>
+      </div>
+      <div class="press-quotes">
+        <div class="press-quote-card reveal">
+          <div class="press-quote-text">
+            "One of the finest farm-to-table experiences in all of Northern
+            California."
+          </div>
+          <div class="press-source">Food & Wine</div>
+        </div>
+        <div class="press-quote-card reveal reveal-delay-1">
+          <div class="press-quote-text">
+            "The Spinster Sisters reminds us why California cuisine became a
+            movement in the first place."
+          </div>
+          <div class="press-source">The New York Times</div>
+        </div>
+        <div class="press-quote-card reveal reveal-delay-2">
+          <div class="press-quote-text">
+            "A must-visit for anyone traveling through wine country. Book early
+            — very early."
+          </div>
+          <div class="press-source">Eater SF</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISIT & RESERVE -->
+    <section id="visit">
+      <div class="visit-hours">
+        <div class="section-label reveal">Plan your visit</div>
+        <h2 class="section-title reveal reveal-delay-1">
+          Hours &amp; <em>Location</em>
+        </h2>
+        <table class="hours-table reveal reveal-delay-2">
+          <tr>
+            <td>Monday – Tuesday</td>
+            <td>Closed</td>
+          </tr>
+          <tr>
+            <td>Wednesday – Thursday</td>
+            <td>5:00 pm – 9:30 pm</td>
+          </tr>
+          <tr>
+            <td>Friday</td>
+            <td>5:00 pm – 10:00 pm</td>
+          </tr>
+          <tr>
+            <td>Saturday</td>
+            <td>10:00 am – 2:00 pm &amp; 5:00 – 10:00 pm</td>
+          </tr>
+          <tr>
+            <td>Sunday Brunch</td>
+            <td>10:00 am – 2:30 pm</td>
+          </tr>
+          <tr>
+            <td>Sunday Dinner</td>
+            <td>5:00 pm – 9:00 pm</td>
+          </tr>
+        </table>
+        <p class="hours-note reveal reveal-delay-3">
+          401 South A Street, Santa Rosa, CA 95401<br />707-528-7100 ·
+          hello@thespinstersisters.com
+        </p>
+      </div>
+
+      <div class="visit-reserve">
+        <div class="section-label">Reservations</div>
+        <h2 class="section-title">Secure your <em>table.</em></h2>
+        <p>
+          Tables fill quickly, especially on weekends. We recommend booking at
+          least two weeks in advance. Walk-ins welcome at the bar.
+        </p>
+        <form class="reserve-form" onsubmit="handleReserve(event)">
+          <div class="reserve-form-row">
+            <input type="text" placeholder="First name" required />
+            <input type="text" placeholder="Last name" required />
+          </div>
+          <input type="email" placeholder="Email address" required />
+          <input type="tel" placeholder="Phone number" />
+          <div class="reserve-form-row">
+            <input type="date" required />
+            <select>
+              <option value="" disabled selected>Guests</option>
+              <option>1 guest</option>
+              <option>2 guests</option>
+              <option>3 guests</option>
+              <option>4 guests</option>
+              <option>5 guests</option>
+              <option>6+ guests</option>
+            </select>
+          </div>
+          <select>
+            <option value="" disabled selected>Preferred seating</option>
+            <option>Dining room</option>
+            <option>Chef's counter</option>
+            <option>Bar</option>
+            <option>Patio (weather permitting)</option>
+            <option>Private dining room</option>
+          </select>
+          <button type="submit" class="btn-reserve-submit" id="submit-btn">
+            Request Reservation
+          </button>
+          <div
+            id="reserve-confirm"
+            style="
+              display: none;
+              font-family: var(--sans);
+              font-size: 13px;
+              color: rgba(255, 255, 255, 0.8);
+              text-align: center;
+              padding: 10px;
+            "
+          >
+            ✓ Request received! We'll confirm within 24 hours.
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div>
+        <div class="footer-brand">The Spinster Sisters</div>
+        <p class="footer-tagline">
+          Farm-to-table cuisine rooted in the honest traditions of Sonoma County
+          since 2011.
+        </p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Navigate</div>
+        <a href="#about">Our Story</a>
+        <a href="#menu">Menu</a>
+        <a href="#experience">Experience</a>
+        <a href="#visit">Visit Us</a>
+        <a href="#">Private Dining</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Contact</div>
+        <p>401 South A Street</p>
+        <p>Santa Rosa, CA 95401</p>
+        <a href="tel:7075287100">707-528-7100</a>
+        <a href="mailto:hello@thespinstersisters.com"
+          >hello@thespinstersisters.com</a
+        >
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Connect</div>
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">Yelp</a>
+        <a href="#">OpenTable</a>
+        <a href="#">Gift Cards</a>
+      </div>
+    </footer>
+
+    <div class="footer-bottom">
+      <span class="footer-copy"
+        >© 2025 The Spinster Sisters. All rights reserved.</span
+      >
+      <div class="footer-social">
+        <a href="#">Privacy</a>
+        <a href="#">Accessibility</a>
+        <a href="#">Press Inquiries</a>
+      </div>
+    </div>
+
+    <script>
+      /* Scroll reveal */
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              observer.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => observer.observe(el));
+
+      /* Nav active highlight on scroll */
+      const sections = document.querySelectorAll(
+        'section[id], div[id="gallery"]',
+      );
+      const navLinks = document.querySelectorAll(".nav-links a");
+
+      window.addEventListener(
+        "scroll",
+        () => {
+          let current = "";
+          sections.forEach((s) => {
+            if (window.scrollY >= s.offsetTop - 120) current = s.id;
+          });
+          navLinks.forEach((a) => {
+            a.style.opacity =
+              a.getAttribute("href") === "#" + current ? "1" : "0.75";
+          });
+        },
+        { passive: true },
+      );
+
+      /* Reservation form */
+      function handleReserve(e) {
+        e.preventDefault();
+        const btn = document.getElementById("submit-btn");
+        btn.textContent = "Sending…";
+        btn.disabled = true;
+        setTimeout(() => {
+          btn.style.display = "none";
+          document.getElementById("reserve-confirm").style.display = "block";
+        }, 900);
+      }
+
+      /* Smooth date min */
+      const dateInput = document.querySelector('input[type="date"]');
+      if (dateInput) {
+        const today = new Date();
+        dateInput.min = today.toISOString().split("T")[0];
+        const nextWeek = new Date(today.getTime() + 7 * 86400000);
+        dateInput.value = nextWeek.toISOString().split("T")[0];
+      }
+    </script>
+  </body>
+</html>
